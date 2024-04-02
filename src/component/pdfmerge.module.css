@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.pdfmerge_container {
+  width: 100vw;
+  /* height: 99.35vh; */
+  height: 99.37vh;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+.pdf_image {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid violet; */
+}
