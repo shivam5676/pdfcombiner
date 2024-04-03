@@ -1,11 +1,13 @@
-import "./App.css";
+// import "./App.css";
+import MainPage from "./component/mainPage";
 import PdfMerge from "./component/pdfmerge";
 
 function App() {
   return (
     <>
       <div className="app_container">
-        <PdfMerge />
+        {/* <PdfMerge /> */}
+        <MainPage></MainPage>
       </div>
     </>
   );
