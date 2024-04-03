@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { PDFDocument } from "pdf-lib";
 import classes from "./pdfmerge.module.css";
+import PdfContext from "../store/pdfContext";
 
 function PdfMerge() {
+  const ctx=useContext(PdfContext)
+const allFiles=ctx.allPdf()
   const [mergedPdf, setMergedPdf] = useState(null);
 
   const handleMerge = async (files) => {
