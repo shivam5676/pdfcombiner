@@ -2,19 +2,23 @@ import React, { useContext, useState } from "react";
 import { FaFilePdf } from "react-icons/fa";
 import { MdAdsClick } from "react-icons/md";
 import PdfContext from "../store/pdfContext";
+import { AiFillDelete } from "react-icons/ai";
 // import PdfMerge from './pdfmerge';
 
 const MainPage = () => {
   const ctx = useContext(PdfContext);
 
   const selectedFile = ctx.allPdf;
+  console.log(selectedFile)
 
   const handleFileChange = (event) => {
     ctx.addPdf(event.target.files[0]);
   };
-  const combinePdfHandler=()=>{
-    
-  }
+  const combinePdfHandler = () => {};
+  const deleteFileHandler = (index) => {
+    console.log("delete called",index);
+    ctx.removePdf(index)
+  };
 
   return (
     <div
@@ -69,7 +73,8 @@ const MainPage = () => {
                 position: "relative",
               }}
             >
-              {selectedFile.map((current) => {
+              {selectedFile.map((current, index) => {
+                // console.log(index)
                 return (
                   <div style={{ display: "flex" }}>
                     <div
@@ -111,6 +116,7 @@ const MainPage = () => {
                       >
                         {current.name}
                       </p>
+                      <div onClick={()=>deleteFileHandler(index)} style={{display:"flex",justifyContent:"end",width:"100%"}}><AiFillDelete style={{width:"45px",height:"45px"}}></AiFillDelete></div>
                     </div>
                   </div>
                 );

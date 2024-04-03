@@ -8,8 +8,12 @@ const PdfContextProvider = (props) => {
     setPdfFiles((prev) => [...prev, pdfFile])
 
   };
-  const removePdfFileHandler = () => {
-    console.log("removing started");
+  const removePdfFileHandler = (index) => {
+    console.log("removing started",index);
+    const allPdfAfterRemoving=[...allPdfFiles]
+    allPdfAfterRemoving.splice(index,1)
+    // console.log(allPdfAfterRemoving)
+    setPdfFiles(allPdfAfterRemoving)
   };
   const pdfContextvalue = {
     addPdf: addPdfFileHandler,
